@@ -15,6 +15,7 @@
   font-size: larger;
   font-weight: bold;
   margin-left: 5px;
+  font-size: 24px;
 }
 
 .navbar-menu {
@@ -30,6 +31,7 @@
   align-items: center;
   justify-content: center;
   gap: 3px;
+  font-size: 18px;
   cursor: pointer;
 }
 .navbar-menu hr {
