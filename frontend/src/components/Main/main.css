@@ -1,6 +1,6 @@
 .main {
   height: 91vh;
-  background: linear-gradient(135deg, #0d1b2a 0%, #00c9a7 50%, #3e92cc 100%);
+  background: linear-gradient(120deg, #376a9d, #008b8b, #008080);
   display: flex;
 }
 
@@ -51,11 +51,11 @@
   color: #0d1b2a;
   border: 1px solid green;
 }
-.main-latest-button button:active{
-    opacity: 50%;
-    background: #00e676;
-    color: white;
-    border: none;
+.main-latest-button button:active {
+  opacity: 50%;
+  background: #00e676;
+  color: white;
+  border: none;
 }
 
 .main-right {

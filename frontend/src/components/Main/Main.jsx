@@ -1,6 +1,6 @@
 import React from "react";
 import "./main.css";
-import main_img from "../Assests/home_page.jpeg";
+import main_img from "../Assests/home_page.png";
 import lightning from "../Assests/lightning_emoji.png";
 
 const Main = () => {
@@ -11,9 +11,6 @@ const Main = () => {
           Next-Gen Tech Just Dropped{" "}
           <img src={lightning} alt="lightning" height={50} width={50} />
         </h2>
-        {/* <div className="main-left-icon">
-          <img src={lightning} alt="lightning" height={50} width={50} />
-        </div> */}
         <div className="main-left-paragraph">
           <p>
             Explore the freshest electronics
