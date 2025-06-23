@@ -70,7 +70,6 @@
   font-weight: 500;
 }
 .login-signup-login span {
-  /* color: #00b89c; */
   color: #0d1b2a;
   font-weight: 600;
   cursor: pointer;
@@ -78,7 +77,7 @@
   transition: color 0.2s ease;
 }
 .login-signup-login span:hover {
-  color: #00c9a7; 
+  color: #00c9a7;
   text-decoration: underline;
 }
 

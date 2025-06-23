@@ -34,7 +34,8 @@ function App() {
           <Route
             path="/audio"
             element={<ShopCategory banner={audio_banner} category="audio" />}
-          >
+          />
+          <Route path="/product" element={<Product/>} > 
             <Route path=":productId" element={<Product />} />
           </Route>
           <Route path="/cart" element={<Cart />} />
