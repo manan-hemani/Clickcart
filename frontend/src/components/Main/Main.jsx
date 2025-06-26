@@ -14,7 +14,7 @@ const Main = () => {
         <div className="main-left-paragraph">
           <p>
             Explore the freshest electronics
-            <p>from smartwatches to laptops—all in one place.</p>
+            <p>from smartwatches to laptops, all in one place.</p>
           </p>
         </div>
         <div className="main-latest-button">

@@ -4,6 +4,7 @@
   padding: 14px;
   box-shadow: 0 1px 3px 1px black;
   background: #f7f5f5;
+  align-items: center;
 }
 
 .navbar-logo {
@@ -76,9 +77,98 @@
   justify-content: center;
   color: white;
   font-size: 16px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: black;
   border-radius: 50px;
   margin-top: -30px;
   margin-left: -60px;
+}
+.navbar-dropdown {
+  display: none;
+}
+
+/* Responsive */
+
+@media (max-width: 1280px) {
+  .navbar {
+    padding: 10px;
+    justify-content: space-evenly;
+  }
+  .navbar-menu {
+    gap: 20px;
+  }
+}
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 12px;
+    justify-content: space-evenly;
+  }
+  .navbar-menu {
+    gap: 15px;
+    padding-left: 15px;
+    padding-right: 10px;
+  }
+  .navbar-logo {
+    transform: scale(0.9);
+  }
+  .navbar-login-cart {
+    transform: scale(0.9);
+    gap: 20px;
+  }
+  .navbar-cart-counter {
+    margin-left: -30px;
+  }
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    width: auto;
+    justify-content: space-evenly;
+    padding: 10px 0px;
+  }
+  .navbar-dropdown {
+    display: block;
+    width: 30px;
+    rotate: -90deg;
+    transition: 0.5s;
+  }
+  .navbar-menu {
+    display: none;
+    height: 80px;
+    width: 100%;
+    position: absolute;
+    justify-content: center;
+    background-color: #f7f5f5;
+    top: 50px;
+  }
+  .navbar-menu-visible {
+    display: flex;
+    width: 100%;
+  }
+  .navbar-dropdown.open {
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    width: auto;
+    gap: 0;
+  }
+  .navbar-logo {
+    transform: scale(0.8);
+  }
+  .navbar-menu-visible {
+    height: 70px;
+    top: 50px;
+    width: 100%;
+  }
+  .navbar-login-cart {
+    transform: scale(0.8);
+    padding-left: 10px;
+  }
+  .navbar-login-cart button{
+    width: 80px;
+    font-size: 14px;
+  }
 }
