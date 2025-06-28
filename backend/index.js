@@ -7,8 +7,6 @@ const jwt = require("jsonwebtoken");
 const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
-const { error } = require("console");
-const { type } = require("os");
 
 app.use(express.json());
 app.use(cors());
@@ -19,7 +17,6 @@ mongoose.connect(
 );
 
 // API Creation
-
 app.get("/", (req,res) => {
     res.send("Express App is Running")    
 })
@@ -33,7 +30,6 @@ const storage = multer.diskStorage({
 })
 
 const upload = multer({ storage: storage })
-
 // Upload Product API
 app.use('/images',express.static('upload/images'))
 app.post("/upload", upload.single('product'), (req, res) => {
