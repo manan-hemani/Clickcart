@@ -12,9 +12,9 @@ const Navbar = () => {
   const menuRef = useRef();
 
   const dropdown_toggle = (e) => {
-    menuRef.current.classList.toggle('navbar-menu-visible');
-    e.target.classList.toggle('open');
-  }
+    menuRef.current.classList.toggle("navbar-menu-visible");
+    e.target.classList.toggle("open");
+  };
 
   return (
     <div className="navbar">
@@ -27,7 +27,12 @@ const Navbar = () => {
           <p>ClickCart</p>
         </Link>
       </div>
-      <img className="navbar-dropdown" onClick={dropdown_toggle} src={nav_dropdown} alt="navToggle" />
+      <img
+        className="navbar-dropdown"
+        onClick={dropdown_toggle}
+        src={nav_dropdown}
+        alt="navToggle"
+      />
       <ul ref={menuRef} className="navbar-menu">
         <li
           onClick={() => {
@@ -90,9 +95,20 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="navbar-login-cart">
-        <Link style={{ textDecoration: "none", color: "black" }} to="/login">
-          <button>Login</button>
-        </Link>
+        {localStorage.getItem("auth-token") ? (
+          <button
+            onClick={() => {
+              localStorage.removeItem("auth-token");
+              window.location.replace("/");
+            }}
+          >
+            Logout
+          </button>
+        ) : (
+          <Link style={{ textDecoration: "none", color: "black" }} to="/login">
+            <button>Login</button>
+          </Link>
+        )}
         <Link style={{ textDecoration: "none", color: "black" }} to="/cart">
           <img src={cart} alt="cart" height={36} />
         </Link>
