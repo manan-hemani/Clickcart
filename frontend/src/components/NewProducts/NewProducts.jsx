@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./NewProducts.css";
-import new_products from "../Assests/new_products";
+// import new_products from "../Assests/new_products";
 import Item from "../Item/Item";
 
 const NewProducts = () => {
+  const [new_products, setNew_products] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:4000/newproducts")
+      .then((response) => response.json())
+      .then((data) => setNew_products(data));
+  }, []);
+
   return (
     <div className="new-products">
       <h1>NEW PRODUCTS</h1>
