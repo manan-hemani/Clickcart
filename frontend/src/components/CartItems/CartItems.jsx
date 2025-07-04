@@ -2,10 +2,11 @@ import React, { useContext } from "react";
 import "./CartItems.css";
 import { ShopContext } from "../../context/ShopContext";
 import remove_icon from "../Assests/remove.png";
+import CartTotal from "../../pages/CartTotal";
 
 const CartItems = () => {
-  const { all_product, cartItems, removeFromCart, getTotalCartAmount } =
-    useContext(ShopContext);
+  const { all_product, cartItems, removeFromCart } = useContext(ShopContext);
+
   return (
     <div className="cart-items">
       <div className="cart-items-format-main">
@@ -49,33 +50,7 @@ const CartItems = () => {
         return null;
       })}
       <div className="cart-items-down">
-        <div className="cart-items-total">
-          <h1>Cart Total</h1>
-          <div>
-            <div className="cart-items-total-item">
-              <p>SubTotal:</p>
-              <p>Rs. {getTotalCartAmount()}</p>
-            </div>
-            <hr />
-            <div className="cart-items-total-item">
-              <p>Shipping Fees:</p>
-              <p>Free</p>
-            </div>
-            <hr />
-            <div className="cart-items-total-item">
-              <h3>Total</h3>
-              <h3>Rs. {getTotalCartAmount()}</h3>
-            </div>
-            <button>Proceed</button>
-          </div>
-        </div>
-        <div className="cart-items-promo-code">
-          <p>Have a promo code?</p>
-          <div className="cart-items-promobox">
-            <input type="text" placeholder="Promo Code" />
-            <button>Submit</button>
-          </div>
-        </div>
+        <CartTotal />
       </div>
     </div>
   );

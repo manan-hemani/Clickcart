@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 import footer_logo from "../Assests/logo.png";
 import instagram_icon from "../Assests/instagram.png";
 import whatsapp_icon from "../Assests/whatsapp.png";
@@ -15,7 +16,9 @@ const Footer = () => {
         <li>Company</li>
         <li>Products</li>
         <li>Offices</li>
-        <li>About</li>
+        <Link style={{ textDecoration: "none", color: "black" }} to="/about">
+          About
+        </Link>
         <li>Contact</li>
       </ul>
       <div className="footer-social-icons">

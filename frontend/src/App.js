@@ -11,6 +11,9 @@ import mobile_banner from './components/Assests/banner.jpg'
 import tablet_banner from './components/Assests/banner.jpg'
 import laptop_banner from './components/Assests/banner.jpg'
 import audio_banner from './components/Assests/banner.jpg'
+import About from "./pages/About.jsx";
+import PlaceOrder from "./pages/PlaceOrder.jsx";
+import Orders from "./pages/Orders.jsx";
 
 function App() {
   return (
@@ -35,11 +38,14 @@ function App() {
             path="/audio"
             element={<ShopCategory banner={audio_banner} category="audio" />}
           />
-          <Route path="/product" element={<Product/>} > 
+          <Route path="/product" element={<Product />}>
             <Route path=":productId" element={<Product />} />
           </Route>
           <Route path="/cart" element={<Cart />} />
+          <Route path="/place-order" element={<PlaceOrder />} />
+          <Route path="/orders" element={<Orders />} />
           <Route path="/login" element={<LoginSignup />} />
+          <Route path="/about" element={<About />} />
         </Routes>
         <Footer />
       </BrowserRouter>
