@@ -1,13 +1,12 @@
 import React from 'react'
 import './Navbar.css';
-import navLogo from "../../Assets/nav-logo-temp.svg";
-import navProfile from "../../Assets/nav-profile-temp.svg"
+import navLogo from "../../Assets/nav-logo.svg";
 
-const navbar = () => {
+const navbar = ({setToken}) => {
   return (
     <div className='navbar'>
       <img src={navLogo} alt="logo" className="navbar-logo" />
-      <img src={navProfile} alt="profile" className="navbar-profile" />
+      <button onClick={()=>{setToken("")}}>Logout</button>
     </div>
   )
 }

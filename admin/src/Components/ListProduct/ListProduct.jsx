@@ -1,74 +1,86 @@
 import React, { useState, useEffect } from "react";
 import "./ListProduct.css";
-import remove from "../../Assets/cross_icon.png";
+import axios from "axios";
+import { backendUrl } from "../../App";
+import { toast } from "react-toastify";
 
-const ListProduct = () => {
-  const [allProducts, setAllProducts] = useState([]);
+const ListProduct = ({ token }) => {
+  const [list, setList] = useState([]);
 
-  const fetchInfo = async () => {
-    await fetch("http://localhost:4000/allproducts")
-      .then((res) => res.json())
-      .then((data) => setAllProducts(data));
+  const fetchList = async () => {
+    try {
+      const response = await axios.get(backendUrl + "/api/product/list");
+      if (response.data.success) {
+        setList(response.data.products);
+      } else {
+        toast.error(response.data.message);
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error(error.message);
+    }
+  };
+
+  const removeProduct = async (id) => {
+    try {
+      const response = await axios.post(
+        backendUrl + "/api/product/remove",
+        { id },
+        { headers: { token } }
+      );
+      if (response.data.success) {
+        toast.success(response.data.message);
+        await fetchList();
+      } else {
+        toast.error(response.error.message);
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error(error.message);
+    }
   };
 
   useEffect(() => {
-    fetchInfo();
+    fetchList();
   }, []);
 
-  const remove_product=async (id) =>  {
-    await fetch("http://localhost:4000/removeproduct", {
-      method: 'POST',
-      headers: {
-        Accept:'application/json',
-        'Content-Type':'application/json'
-      },
-      body:JSON.stringify({id:id})
-    });
-    await fetchInfo();
-  }
-
   return (
-    <div className="list-product">
-      <h1>All Products List</h1>
-      <div className="list-product-format-main">
-        <p>Products</p>
-        <p>Title</p>
-        <p>Old Price</p>
-        <p>New Price</p>
-        <p>Category</p>
-        <p>Remove</p>
-      </div>
-      <div className="list-product-all-products">
-        <hr />
-        {allProducts.map((product, index) => {
-          return (
-            <>
-              <div
-                key={index}
-                className="list-product-format-main list-product-format"
-              >
+    <>
+      <div className="list-product">
+        <h1>All Products List</h1>
+        <div className="list-product-format-main">
+          <b>Image</b>
+          <b>Name</b>
+          <b>Category</b>
+          <b>Price</b>
+          <b className="list-product-action">Action</b>
+        </div>
+
+        {/* Products List */}
+        <div className="list-product-all-products">
+          {list.map((item, index) => {
+            return (
+              <div key={index} className="list-product-format">
                 <img
-                  src={product.image}
-                  alt="product"
+                  src={item.images[0]}
+                  alt="image"
                   className="list-product-icon"
                 />
-                <p>{product.name}</p>
-                <p>Rs. {product.old_price}</p>
-                <p>Rs. {product.new_price}</p>
-                <p>{product.category}</p>
-                <img
-                  onClick={()=>{remove_product(product.id)}}
-                  src={remove}
-                  alt="remove"
-                  className="list-product-remove-icon"
-                />
+                <p>{item.name}</p>
+                <p>{item.category}</p>
+                <p>Rs. {item.new_price}</p>
+                <p
+                  onClick={() => removeProduct(item._id)}
+                  className="list-product-remove"
+                >
+                  X
+                </p>
               </div>
-              <hr />
-            </>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

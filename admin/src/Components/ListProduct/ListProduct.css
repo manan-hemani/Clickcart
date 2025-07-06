@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 740px;
+    height: 97vh;
     padding: 10px 50px;
     margin: 30px;
     border-radius: 6px;
@@ -12,26 +12,38 @@
 
 .list-product-format-main{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: auto;
+    grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+    background-color: aliceblue;
     width: 100%;
-    padding: 20px 0px;
+    padding: 10px 10px;
     font-size: 16px;
     font-weight: 500;
+    height: 20px;
+    border: 1px solid wheat;
+}
+
+.list-product-action{
+    text-align: center;
 }
 
 .list-product-format{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
     align-items: center;
     font-weight: 500;
+    margin-top: 5px;
+    padding: 5px 5px;
+    border: 0.5px solid wheat;
 }
+.list-product-remove{
+    cursor: pointer;
+    text-align: center;
+    font-size: 18px;
+} 
 
 .list-product-icon{
-    height: 80px;
-}
-
-.list-product-remove-icon{
-    cursor: pointer;
-    margin: auto;
+    width: 50px;
+    height: 50px;
 }
 
 .list-product-all-products{
@@ -42,17 +54,36 @@
 
 @media (max-width:800px) {
     .list-product{
+        width: auto;
+    }
+    .list-product-format-main{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+    .list-product-format{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        padding: 15px 0px;
+        font-size: 14px;
+    }
+    .list-product-icon{
+        height: 50px;
+        width: 50px;
+    }
+}
+
+@media (max-width:500px) {
+    .list-product{
         box-sizing: border-box;
         width: 95%;
         height: 100%;
         padding: 10px 30px;
         margin: 20px auto;
     }
-    .list-product-format-main{
+    .list-product-format{
         padding: 15px 0px;
-        font-size: 12px;
+        font-size: 14px;
     }
     .list-product-icon{
-        height: 60px;
+        height: 50px;
+        width: 50px;
     }
 }
