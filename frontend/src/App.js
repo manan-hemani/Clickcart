@@ -1,6 +1,8 @@
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Shop  from "./pages/Shop.jsx";
 import  ShopCategory  from "./pages/ShopCategory.jsx";
 import  Product  from "./pages/Product.jsx";
@@ -12,6 +14,7 @@ import tablet_banner from './components/Assests/banner.jpg'
 import laptop_banner from './components/Assests/banner.jpg'
 import audio_banner from './components/Assests/banner.jpg'
 import About from "./pages/About.jsx";
+import ContactUs from "./pages/ContactUs.jsx";
 import PlaceOrder from "./pages/PlaceOrder.jsx";
 import Orders from "./pages/Orders.jsx";
 
@@ -19,6 +22,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
+        <ToastContainer/>
         <Navbar />
         <Routes>
           <Route path="/" element={<Shop />} />
@@ -46,6 +50,7 @@ function App() {
           <Route path="/orders" element={<Orders />} />
           <Route path="/login" element={<LoginSignup />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contactus" element={<ContactUs />} />
         </Routes>
         <Footer />
       </BrowserRouter>

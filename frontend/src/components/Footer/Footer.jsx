@@ -16,10 +16,22 @@ const Footer = () => {
         <li>Company</li>
         <li>Products</li>
         <li>Offices</li>
-        <Link style={{ textDecoration: "none", color: "black" }} to="/about">
-          About
-        </Link>
-        <li>Contact</li>
+        <li>
+          <Link
+            className="footer-link"
+            to="/about"
+          >
+            About
+          </Link>
+        </li>
+        <li>
+          <Link
+            className="footer-link"
+            to="/contactus"
+          >
+            Contact
+          </Link>
+        </li>
       </ul>
       <div className="footer-social-icons">
         <div className="footer-icons-container">

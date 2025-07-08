@@ -3,14 +3,18 @@ import "./NewProducts.css";
 // import new_products from "../Assests/new_products";
 import Item from "../Item/Item";
 
-const NewProducts = () => {
+const NewProducts = ({ products }) => {
   const [new_products, setNew_products] = useState([]);
 
+  // useEffect(() => {
+  //   if (Array.isArray(products) && products.length > 0) {
+  //     const filtered = products.filter((item) => item.bestseller);
+  //     setNew_products(filtered.slice(0, 5));
+  //   }
+  // }, [products]);
   useEffect(() => {
-    fetch("http://localhost:4000/newproducts")
-      .then((response) => response.json())
-      .then((data) => setNew_products(data));
-  }, []);
+    setNew_products(products.slice(0, 5));
+  },[products]);
 
   return (
     <div className="new-products">
@@ -21,9 +25,9 @@ const NewProducts = () => {
           return (
             <Item
               key={i}
-              id={item.id}
+              id={item._id}
               name={item.name}
-              image={item.image}
+              image={item.images[0]}
               new_price={item.new_price}
               old_price={item.old_price}
             />

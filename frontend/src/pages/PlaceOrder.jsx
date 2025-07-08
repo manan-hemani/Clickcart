@@ -2,15 +2,16 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CSS/PlaceOrder.css";
 import CartTotal from "./CartTotal";
-import stripe_icon from "../components/Assests/Cart.png";
+import stripe_icon from "../components/Assests/stripe_logo.png";
+import razorpay_icon from "../components/Assests/razorpay_logo.png";
 
 const PlaceOrder = () => {
-    const [method, setMethod] = useState("cod");
-    const navigate = useNavigate();
-    const handlePlace = () => {
-      navigate("/orders");
-    };
-    
+  const [method, setMethod] = useState("cod");
+  const navigate = useNavigate();
+  const handlePlace = () => {
+    navigate("/orders");
+  };
+
   return (
     <div className="place-order">
       <div className="place-order-left">
@@ -62,7 +63,7 @@ const PlaceOrder = () => {
                   width: "10px",
                 }}
               ></p>
-              <img src={stripe_icon} alt="razorpay" />
+              <img src={razorpay_icon} alt="razorpay" />
             </div>
             <div
               onClick={() => setMethod("cod")}
@@ -75,10 +76,16 @@ const PlaceOrder = () => {
                   width: "10px",
                 }}
               ></p>
-              <img src={stripe_icon} alt="cod" />
+              <h3>Cash On Delivery</h3>
             </div>
-                  </div>
-                  <button onClick={()=>{handlePlace()}}>Place Order</button>
+          </div>
+          <button
+            onClick={() => {
+              handlePlace();
+            }}
+          >
+            Place Order
+          </button>
         </div>
       </div>
     </div>

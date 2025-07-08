@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "./CSS/CartTotal.css";
 
 const CartTotal = () => {
-  const { getTotalCartAmount } = useContext(ShopContext);
+  const { getTotalCartAmount, delivery_fee } = useContext(ShopContext);
 
   const navigate = useNavigate();
   const handleProceed = () => {
@@ -25,12 +25,12 @@ const CartTotal = () => {
           <hr />
           <div className="cart-items-total-item">
             <p>Shipping Fees:</p>
-            <p>Free</p>
+            <p>Rs. {delivery_fee}</p>
           </div>
           <hr />
           <div className="cart-items-total-item">
             <h3>Total</h3>
-            <h3>Rs. {getTotalCartAmount()}</h3>
+            <h3>Rs. {getTotalCartAmount()+delivery_fee}</h3>
           </div>
           {!hidePromo && <button onClick={handleProceed}>Proceed</button>}
         </div>

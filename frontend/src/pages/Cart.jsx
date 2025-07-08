@@ -1,12 +1,37 @@
-import React from 'react'
-import CartItems from '../components/CartItems/CartItems'
+import React, { useState, useEffect, useContext } from "react";
+import CartItem from "../components/CartItem/CartItem";
+import { ShopContext } from "../context/ShopContext";
 
 const Cart = () => {
-  return (
-    <div className='cart'>
-      <CartItems/>
-    </div>
-  )
-}
+  const [cartData, setCartData] = useState([]);
+  const { cartItems, products } = useContext(ShopContext);
 
-export default Cart
+  useEffect(
+    () => {
+      if (products.length > 0) {
+        const tempData = [];
+        for (const items in cartItems) {
+          for (const item in cartItems[items]) {
+            if (cartItems[items][item] > 0) {
+              tempData.push({
+                _id: items,
+                size: item,
+                quantity: cartItems[items][item],
+              });
+            }
+          }
+        }
+        setCartData(tempData);
+      }
+    },
+    [cartItems,products]
+  );
+  console.log(cartData);
+  return (
+    <div className="cart">
+      <CartItem cartData={cartData} />
+    </div>
+  );
+};
+
+export default Cart;

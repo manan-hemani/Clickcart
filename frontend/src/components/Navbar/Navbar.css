@@ -87,6 +87,12 @@
   display: none;
 }
 
+.navbar-login-cart .order-button{
+  width: 120px;
+  height: 30px;
+  font-size: 14px;
+  background-color: black;
+}
 /* Responsive */
 
 @media (max-width: 1280px) {

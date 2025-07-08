@@ -1,127 +1,136 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { useState } from "react";
 import "./CSS/LoginSignup.css";
+import { ShopContext } from "../context/ShopContext";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const LoginSignup = () => {
   const [state, setstate] = useState("Login");
-  const [formData, setFormData] = useState({
-    username: "",
-    password: "",
-    email:""
-  })
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isChecked, setIsChecked] = useState(false);
+  const { token, setToken, backendURL } = useContext(ShopContext);
+  const navigate = useNavigate();
 
-  const changeHandler = (e) => {
-    setFormData({...formData,[e.target.name]:e.target.value})
-  }
-
-  const login =async (params) => {
-    console.log("Login Successful", formData)
-    let responseData;
-    await fetch("http://localhost:4000/login", {
-      method: "POST",
-      headers: {
-        Accept: "application/form-data",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => response.json())
-      .then((data) => (responseData = data));
-    if (responseData.success) {
-      localStorage.setItem("auth-token", responseData.token);
-      window.location.replace("/");
+  const onSubmitHandler = async (event) => {
+    event.preventDefault();
+    if (isChecked) {
+      try {
+        if (state === "Sign Up") {
+          console.log(backendURL);
+          const response = await axios.post(backendURL + "/api/user/signup", {
+            name,
+            email,
+            password,
+          });
+          console.log(response.data);
+          if (response.data.success) {
+            setToken(response.data.token);
+            localStorage.setItem("token", response.data.token);
+            toast.success("Account Created Successfully");
+          } else {
+            toast.error(response.data.errors);
+          }
+        } else {
+          const response = await axios.post(backendURL + "/api/user/login", {
+            email,
+            password,
+          });
+          console.log(response.data);
+          if (response.data.success) {
+            setToken(response.data.token);
+            localStorage.setItem("token", response.data.token);
+            toast.success("Logged In Successfully");
+          } else {
+            toast.error(response.data.errors);
+          }
+        }
+      } catch (error) {
+        console.log(error);
+        toast.error(error.message);
+      }
     } else {
-      alert(responseData.errors);
+      toast.error("Please check the box to proceed");
     }
-  }
-  
-  const signup = async (params) => {
-    console.log("Signup Successfull", formData)
-    let responseData;
-    await fetch('http://localhost:4000/signup', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/form-data',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData)
-    }).then((response) => response.json()).then((data) => responseData = data);
-    if (responseData.success) {
-      localStorage.setItem('auth-token', responseData.token);
-      window.location.replace("/")
+  };
+
+  useEffect(() => {
+    if (token) {
+      navigate("/");
     }
-    else {
-      alert(responseData.errors)
-    }
-  }
+  }, [token, navigate]);
 
   return (
-    <div className="login-signup">
-      <div className="login-signup-container">
-        <h1>{state}</h1>
-        <div className="login-signup-fields">
-          {state === "Sign Up" ? (
+    <form onSubmit={onSubmitHandler}>
+      <div className="login-signup">
+        <div className="login-signup-container">
+          <h1>{state}</h1>
+          <div className="login-signup-fields">
+            {state === "Sign Up" ? (
+              <input
+                name="username"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                type="text"
+                placeholder="Enter Name"
+              />
+            ) : (
+              <></>
+            )}
             <input
-              name="username"
-              value={formData.username}
-              onChange={changeHandler}
-              type="text"
-              placeholder="Enter Name"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              placeholder="Enter Email Address"
             />
+            <input
+              name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              placeholder="Enter Password"
+            />
+          </div>
+          <button>Continue</button>
+          {state === "Sign Up" ? (
+            <p className="login-signup-login">
+              Already have an account?{" "}
+              <span
+                onClick={() => {
+                  setstate("Login");
+                }}
+              >
+                LOGIN
+              </span>
+            </p>
           ) : (
-            <></>
+            <p className="login-signup-login">
+              Create an account?{" "}
+              <span
+                onClick={() => {
+                  setstate("Sign Up");
+                }}
+              >
+                CLICK HERE
+              </span>
+            </p>
           )}
-          <input
-            name="email"
-            value={formData.email}
-            onChange={changeHandler}
-            type="email"
-            placeholder="Enter Email Address"
-          />
-          <input
-            name="password"
-            value={formData.password}
-            onChange={changeHandler}
-            type="password"
-            placeholder="Enter Password"
-          />
-        </div>
-        <button
-          onClick={() => {
-            state === "Login" ? login() : signup();
-          }}
-        >
-          Continue
-        </button>
-        {state === "Sign Up" ? (
-          <p className="login-signup-login">
-            Already have an account?{" "}
-            <span
-              onClick={() => {
-                setstate("Login");
-              }}
-            >
-              LOGIN
-            </span>
-          </p>
-        ) : (
-          <p className="login-signup-login">
-            Create an account?{" "}
-            <span
-              onClick={() => {
-                setstate("Sign Up");
-              }}
-            >
-              CLICK HERE
-            </span>
-          </p>
-        )}
-        <div className="login-signup-agree">
-          <input type="checkbox" name="" id="" />
-          <p>By continuing, I agree the terms of use & privacy policy.</p>
+          <div className="login-signup-agree">
+            <input
+              type="checkbox"
+              checked={isChecked}
+              onChange={(e) => setIsChecked(e.target.checked)}
+              id="agree"
+            />
+            <p>By continuing, I agree the terms of use & privacy policy.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </form>
   );
 };
 

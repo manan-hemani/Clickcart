@@ -1,0 +1,86 @@
+.orders{
+    height: 100vh;
+}
+.orders h1 {
+  margin: 10px 10px 20px 10px;
+  font-size: 44px;
+}
+
+.orders-container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.orders-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+.orders-list img {
+  height: 100px;
+}
+
+.orders-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.top-row{
+    display: flex;
+    gap: 15px;
+    margin-bottom: 3px;
+    font-size: 16px;
+}
+.bottom-row{
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+}
+.orders-date{
+    color: rgb(93, 93, 93);
+}
+
+.orders-status{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.orders-status-dot{
+    background-color: #00e676;
+    border-radius: 50px;
+    border: 2px solid black;
+    height: 7px;
+    width: 7px;
+}
+.orders-status p{
+    font-size: 18px;
+}
+
+.orders-track{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.orders-track button{
+    width: 120px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    height: 35px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.orders-track button:hover{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}

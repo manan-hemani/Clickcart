@@ -1,0 +1,45 @@
+.about-us{
+    height: 100vh;
+}
+.about-us h1{
+    margin:10px 10px ;
+}
+.about{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.about-left img{
+    border: 1px solid;
+    border-radius: 50px;
+}
+
+.about-right{
+    margin-right: 10px;
+    text-align: justify;
+}
+
+.admin-btn{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.admin-btn button{
+    background-color: #71d070;
+    border: none;
+    width: 150px;
+    font-size: 18px;
+    height: 30px;
+    color: black;
+    cursor: pointer;
+    transition:  0.3s ease;
+}
+.admin-btn button:hover{
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 50px;
+}

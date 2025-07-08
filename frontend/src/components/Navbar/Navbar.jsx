@@ -5,10 +5,12 @@ import cart from "../Assests/Cart.png";
 import { Link } from "react-router-dom";
 import { ShopContext } from "../../context/ShopContext";
 import nav_dropdown from "../Assests/nav_dropdown.png";
+import my_order from "../Assests/order_history.png";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const [menu, setMenu] = useState("shop");
-  const { getTotalCartItems } = useContext(ShopContext);
+  const { getTotalCartItems, token } = useContext(ShopContext);
   const menuRef = useRef();
 
   const dropdown_toggle = (e) => {
@@ -95,11 +97,12 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="navbar-login-cart">
-        {localStorage.getItem("auth-token") ? (
+        {localStorage.getItem("token") ? (
           <button
             onClick={() => {
-              localStorage.removeItem("auth-token");
+              localStorage.removeItem("token");
               window.location.replace("/");
+              toast.success("Logged Out Successfully");
             }}
           >
             Logout
@@ -108,6 +111,13 @@ const Navbar = () => {
           <Link style={{ textDecoration: "none", color: "black" }} to="/login">
             <button>Login</button>
           </Link>
+        )}
+        {token ? (
+          <Link style={{ textDecoration: "none", color: "black" }} to="/orders">
+            <img src={my_order} alt="orderHistory" />
+          </Link>
+        ) : (
+          ""
         )}
         <Link style={{ textDecoration: "none", color: "black" }} to="/cart">
           <img src={cart} alt="cart" height={36} />

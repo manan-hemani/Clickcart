@@ -1,19 +1,22 @@
-import React from 'react'
-import Main from '../components/Main/Main'
-import Popular from '../components/Popular/Popular'
-import Offers from '../components/Offers/Offers'
-import NewProducts from '../components/NewProducts/NewProducts'
-import NewsLetter from '../components/NewsLetter/NewsLetter'
+import React, { useContext } from "react";
+import Main from "../components/Main/Main";
+import Popular from "../components/Popular/Popular";
+import Offers from "../components/Offers/Offers";
+import NewProducts from "../components/NewProducts/NewProducts";
+import NewsLetter from "../components/NewsLetter/NewsLetter";
+import { ShopContext } from "../context/ShopContext";
+
 const Shop = () => {
+  const { products } = useContext(ShopContext);
   return (
     <div>
       <Main />
-      <Popular />
+      <Popular products={products} />
       <Offers />
-      <NewProducts />
-      <NewsLetter/>
+      <NewProducts products={products} />
+      <NewsLetter />
     </div>
-  )
-}
+  );
+};
 
-export default Shop
+export default Shop;
