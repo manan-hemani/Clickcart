@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import React, { useContext, useEffect, useState } from "react";
 import "./CSS/Orders.css";
 import { ShopContext } from "../context/ShopContext";
@@ -36,6 +37,7 @@ const Orders = () => {
 
   useEffect(() => {
     loadOrderData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token]);
 
   return (
