@@ -1,45 +1,96 @@
-.about-us{
-    height: 100vh;
+.about-us {
+  height: 100vh;
 }
-.about-us h1{
-    margin:10px 10px ;
+.about-us h1 {
+  margin: 10px 10px;
+  text-align: center;
 }
-.about{
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 20px;
+}
+
+.about-right {
+  margin-right: 20px;
+  padding-right: 50px;
+  text-align: justify;
+}
+.about-right h3{
+  margin-top: 20px;
+}
+
+.about-why-chose-us{
+  margin-top: 20px;
+  padding: 10px 10px;
+}
+
+.about-why-format-main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  border: 1px solid gray;
+}
+
+.about-chose-details{
+  border: 1px solid gray;
+  padding: 10px;
+}
+.about-chose-details h4{
+  margin-bottom: 10px;
+}
+
+.admin-btn {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.admin-btn button {
+  background-color: #71d070;
+  border: none;
+  width: 150px;
+  font-size: 18px;
+  height: 30px;
+  color: black;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.admin-btn button:hover {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 50px;
+}
+
+/* Responsive */
+@media (max-width:800px) {
+  .about-us{
+    height: auto;
+  }
+  .about-left img{
+    width: 200px;
+  }
+}
+
+@media (max-width:500px) {
+  .about{
+    display: block;
+  }
+  .about-left img{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
-    gap: 20px;
-}
-
-.about-left img{
-    border: 1px solid;
-    border-radius: 50px;
-}
-
-.about-right{
-    margin-right: 10px;
-    text-align: justify;
-}
-
-.admin-btn{
-    margin-top: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.admin-btn button{
-    background-color: #71d070;
-    border: none;
-    width: 150px;
-    font-size: 18px;
-    height: 30px;
-    color: black;
-    cursor: pointer;
-    transition:  0.3s ease;
-}
-.admin-btn button:hover{
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 50px;
+    margin: 0 auto;
+    width: 250px;
+    height: 250px;
+  }
+  .about-right{
+    padding: 10px 10px;
+  }
+  .about-why-format-main{
+    display: block;
+  }
 }

@@ -1,0 +1,87 @@
+.contact-us {
+  height: 80vh;
+}
+.contact-us h1 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.contact-left img {
+  height: 600px;
+}
+
+.contact-details h3 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+.contact-details p {
+  color: rgb(93, 93, 93);
+}
+.contact-details a {
+  text-decoration: none;
+  color: rgb(93, 93, 93);
+}
+
+.jobs-btn {
+  margin-top: 30px;
+  background-color: white;
+  border: 1px solid gray;
+  font-size: 14px;
+  width: 120px;
+  height: 50px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.jobs-btn:hover {
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .contact {
+    justify-content: flex-start;
+    gap: 0;
+    padding: 5px 5px;
+  }
+  .contact-left img {
+    width: 300px;
+  }
+}
+
+@media (max-width: 500px) {
+  .contact-us {
+    height: auto;
+  }
+  .contact {
+    display: block;
+  }
+  .contact-left img {
+    width: auto;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .contact-details {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .jobs-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    height: 30px;
+  }
+}
