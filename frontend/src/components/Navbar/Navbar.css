@@ -32,7 +32,7 @@
   align-items: center;
   justify-content: center;
   gap: 3px;
-  font-size: 18px;
+  font-size: 20px;
   cursor: pointer;
 }
 .navbar-menu hr {
@@ -49,26 +49,7 @@
   gap: 50px;
   cursor: pointer;
 }
-.navbar-login-cart button {
-  border: 1px solid black;
-  border-radius: 50px;
-  width: 130px;
-  height: 40px;
-  color: black;
-  outline: none;
-  background: white;
-  font-size: 18px;
-  font-weight: 500;
-  cursor: pointer;
-}
-.navbar-login-cart button:hover {
-  background: #b3b6b3;
-  border: none;
-  color: white;
-}
-.navbar-login-cart button:active {
-  background: #bac2bd;
-}
+
 .navbar-cart-counter {
   width: 20px;
   height: 20px;
@@ -87,12 +68,6 @@
   display: none;
 }
 
-.navbar-login-cart .order-button{
-  width: 120px;
-  height: 30px;
-  font-size: 14px;
-  background-color: black;
-}
 /* Responsive */
 
 @media (max-width: 1280px) {
@@ -114,11 +89,17 @@
     padding-left: 15px;
     padding-right: 10px;
   }
-  .navbar-logo {
-    transform: scale(0.9);
+  .navbar-logo{
+    gap: 0;
+  }
+  .navbar-logo img{
+    width: 40px;
+    height: 40px;
+  }
+  .navbar-logo p{
+    font-size: 18px;
   }
   .navbar-login-cart {
-    transform: scale(0.9);
     gap: 20px;
   }
   .navbar-cart-counter {
@@ -129,10 +110,11 @@
 @media (max-width: 800px) {
   .navbar {
     width: auto;
-    justify-content: space-evenly;
-    padding: 10px 0px;
+    justify-content: space-between;
+    padding: 10px 5px;
   }
   .navbar-dropdown {
+    cursor: pointer;
     display: block;
     width: 30px;
     rotate: -90deg;
@@ -143,9 +125,9 @@
     height: 80px;
     width: 100%;
     position: absolute;
-    justify-content: center;
     background-color: #f7f5f5;
     top: 50px;
+    left: 0px;
   }
   .navbar-menu-visible {
     display: flex;
@@ -160,21 +142,30 @@
   .navbar {
     width: auto;
     gap: 0;
-  }
-  .navbar-logo {
-    transform: scale(0.8);
+    justify-content: space-evenly;
   }
   .navbar-menu-visible {
     height: 70px;
+    width: auto;
     top: 50px;
     width: 100%;
+    padding: 0;
+  }
+  .navbar-menu li{
+    font-size: 16px;
   }
   .navbar-login-cart {
-    transform: scale(0.8);
-    padding-left: 10px;
+    padding-left: 5px;
+    gap: 7px;
   }
-  .navbar-login-cart button{
-    width: 80px;
-    font-size: 14px;
+  .navbar-login-cart img{
+    width: 25px;
+    height: 25px;
+  }
+  .navbar-cart-counter{
+    margin-left: -17px;
+    font-size: small;
+    width: 15px;
+    height: 15px;
   }
 }

@@ -59,11 +59,7 @@
 
 @media (max-width:800px) {
   .item{
-    width: 90%;
     font-size: 12px;
-  }
-  .item img{
-    width: 100px;
   }
   .item-prices{
     display: block;
@@ -72,13 +68,7 @@
 
 @media (max-width:500px) {
   .item{
-    width: 90%;
-    height: 90%;
     font-size: 12px;
-  }
-  .item img{
-    width: 90%;
-    height: 70%;
   }
   .item-price-new{
     font-size: 14px;

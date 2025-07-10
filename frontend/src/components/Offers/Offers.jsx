@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Offers.css";
 import offer_image from "../Assests/exclusive_image.png";
+import { toast } from "react-toastify";
 
 const Offers = () => {
+  const promoCode = "CLICKCART1000";
+
+  const handleClick = () => {
+    if (localStorage.getItem("token")) {
+      navigator.clipboard.writeText(promoCode);
+      toast.success("Promo Code Copied!");
+    } else {
+      toast.error("Please Log in to use a promo code");
+    }
+  };
+
   return (
     <div className="offers">
       <div className="offers-left">
@@ -13,7 +25,7 @@ const Offers = () => {
           members.
         </p>
         <div className="offers-left-button">
-          <button>Grab the Deal</button>
+          <button onClick={handleClick}>Grab the Deal</button>
         </div>
       </div>
       <div className="offers-right">

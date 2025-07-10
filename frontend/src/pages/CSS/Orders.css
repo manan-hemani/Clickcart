@@ -1,6 +1,6 @@
-.orders{
-    height: auto;
-    margin-bottom: 20px;
+.orders {
+  height: auto;
+  margin-bottom: 20px;
 }
 .orders h1 {
   margin: 10px 10px 20px 10px;
@@ -10,7 +10,7 @@
 .orders-container {
   display: grid;
   align-items: center;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
   margin-left: 10px;
   margin-right: 10px;
 }
@@ -18,70 +18,154 @@
 .orders-list {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 10px;
   margin-bottom: 10px;
   margin-top: 5px;
 }
 .orders-list img {
-  height: 100px;
+  height: 120px;
 }
 
-.orders-details{
+.orders-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.order-first-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 3px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.order-second-row {
+  display: flex;
+  gap: 20px;
+  font-size: 16px;
+}
+
+.order-third-row {
+  font-size: 14px;
+}
+.order-date {
+  color: #65766e;
+}
+.order-payment {
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+.orders-status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.orders-status-dot {
+  background-color: #00e676;
+  border-radius: 50px;
+  border: 2px solid black;
+  height: 7px;
+  width: 7px;
+}
+.orders-status p {
+  font-size: 18px;
+}
+
+.orders-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.orders-track button {
+  width: 120px;
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  height: 35px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.orders-track button:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    .orders h1{
+        text-align: center;
+    }
+  .orders-container {
+    margin: 5px;
+  }
+  .orders-list img {
+    height: 100px;
+  }
+  .order-first-row {
+    font-size: 16px;
+  }
+  .order-second-row {
+    font-size: 14px;
+  }
+  .orders-status p {
+    font-size: 14px;
+  }
+  .orders-status-dot {
+    width: 7px;
+    height: 7px;
+    border: 1px solid;
+  }
+  .orders-status {
+    justify-content: center;
+  }
+  .orders-track {
+    justify-content: flex-end;
+  }
+  .orders-track button {
+    width: 100px;
+    font-size: 14px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  .orders h1{
+    font-size: 40px;
+  }
+  .orders-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-}
-.top-row{
-    display: flex;
-    gap: 15px;
-    margin-bottom: 3px;
-    font-size: 16px;
-}
-.bottom-row{
-    display: flex;
-    gap: 20px;
-    font-size: 14px;
-}
-.orders-date{
-    color: rgb(93, 93, 93);
-}
-
-.orders-status{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-}
-.orders-status-dot{
-    background-color: #00e676;
-    border-radius: 50px;
-    border: 2px solid black;
-    height: 7px;
-    width: 7px;
-}
-.orders-status p{
+  }
+  .orders-status {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  .orders-list img {
+    height: 150px;
+  }
+  .order-first-row {
     font-size: 18px;
-}
-
-.orders-track{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-}
-.orders-track button{
-    width: 120px;
-    border: none;
-    background-color: black;
-    color: white;
+  }
+  .order-second-row {
     font-size: 16px;
-    height: 35px;
-    border-radius: 50px;
-    cursor: pointer;
-}
-.orders-track button:hover{
-    background-color: white;
-    color: black;
-    border: 1px solid black;
+  }
+  .order-third-row {
+    font-size: 16px;
+  }
+  .order-third-row p {
+    margin-bottom: 5px;
+  }
+  .orders-status p {
+    font-size: 18px;
+  }
+  .orders-track button {
+    width: 150px;
+    height: 40px;
+    font-size: 16px;
+  }
 }

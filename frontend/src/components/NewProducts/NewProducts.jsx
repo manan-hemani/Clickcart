@@ -17,7 +17,7 @@ const NewProducts = ({ products }) => {
   },[products]);
 
   return (
-    <div className="new-products">
+    <div className="new-products" id="new-arrivals">
       <h1>NEW PRODUCTS</h1>
       <hr />
       <div className="new-products-items">

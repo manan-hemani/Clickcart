@@ -70,6 +70,7 @@ const PlaceOrder = () => {
         amount: getTotalCartAmount() + delivery_fee,
       };
 
+      // Order Methods
       switch (method) {
         // COD API Call
         case "cod":
@@ -85,8 +86,14 @@ const PlaceOrder = () => {
             toast.error(response.data.message);
           }
           break;
-
+        case "stripe":
+          toast.warn("Demo Version Payment not Setupped");
+          break;
+        case "razorpay":
+          toast.warn("Demo Version Payment not Setupped");
+          break;
         default:
+          toast.error("Select Payment Method");
           break;
       }
     } catch (error) {
@@ -227,14 +234,7 @@ const PlaceOrder = () => {
                 <h3>Cash On Delivery</h3>
               </div>
             </div>
-            <button
-              type="submit"
-              // onClick={() => {
-              //   handlePlace();
-              // }}
-            >
-              Place Order
-            </button>
+            <button type="submit">Place Order</button>
           </div>
         </div>
       </div>

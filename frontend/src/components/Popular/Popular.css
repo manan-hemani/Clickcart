@@ -23,7 +23,8 @@
 
 .popular-items{
     margin-top: 50px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 30px;
 }
 
@@ -60,11 +61,14 @@
     }
     .popular-items{
         gap: 15px;
-        margin-top: 25px;
+        margin:10px;
     }
 }
 
 @media (max-width:800px) {
+    .popular{
+        height: auto;
+    }
     .popular h1{
         font-size: 20px;
     }
@@ -73,7 +77,8 @@
         height: 3px;
     }
     .popular-items{
-        gap: 5px;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
         margin-top: 10px;
     }
 }
@@ -89,9 +94,9 @@
         width: 80px;
     }
     .popular-items{
-       display: grid;
        grid-template-columns: 1fr 1fr;
        gap: 25px;
-       margin: 5px;
+       margin: 10px;
+       padding: 5px;
     }
 }

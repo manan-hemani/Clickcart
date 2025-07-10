@@ -155,6 +155,7 @@
     margin-top: 10px;
     font-size: 16px;
     width: 200px;
+    height: 40px;
   }
   .main-right img {
     width: 240px;
@@ -176,17 +177,16 @@
     padding: 0px;
   }
   .main-left h2 {
-    font-size: 25px;
+    font-size: 22px;
   }
   .main-left p {
     align-items: flex-start;
     justify-content: flex-start;
-    font-size: 18px;
-    text-align: start;
+    font-size: 14px;
+    text-align: center;
   }
   .main-left img {
-    width: 40px;
-    height: 40px;
+   display: none;
   }
   .main-latest-button {
     display: flex;

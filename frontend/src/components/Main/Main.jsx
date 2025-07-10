@@ -4,6 +4,13 @@ import main_img from "../Assests/home_page.png";
 import lightning from "../Assests/lightning_emoji.png";
 
 const Main = () => {
+  const handleClick = () => {
+    const target = document.getElementById("new-arrivals");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="main">
       <div className="main-left">
@@ -13,12 +20,13 @@ const Main = () => {
         </h2>
         <div className="main-left-paragraph">
           <p>
-            Explore the freshest electronics<br/>
+            Explore the freshest electronics
+            <br />
             from smartwatches to laptops, all in one place.
           </p>
         </div>
         <div className="main-latest-button">
-          <button>Browse New Arrivals</button>
+          <button onClick={handleClick}>Browse New Arrivals</button>
         </div>
       </div>
       <div className="main-right">

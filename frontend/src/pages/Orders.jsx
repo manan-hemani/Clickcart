@@ -37,7 +37,7 @@ const Orders = () => {
 
   useEffect(() => {
     loadOrderData();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token]);
 
   return (
@@ -50,17 +50,19 @@ const Orders = () => {
               <div className="orders-list">
                 <img src={item.images[0]} alt="orders" />
                 <div className="orders-details">
-                  <div className="top-row">
+                  <div className="order-first-row">
                     <p>{item.name}</p>
-                    <p>Rs. {item.new_price}</p>
-                    <p>Qantity: { item.quantity}</p>
                   </div>
-                  <div className="bottom-row">
+                  <div className="order-second-row">
+                    <p>Rs. {item.new_price}</p>
+                    <p>Quantity: {item.quantity}</p>
+                  </div>
+                  <div className="order-third-row">
                     <p>Size: {item.size}</p>
-                    <p className="orders-date">
+                    <p className="order-date">
                       Date: <span>{new Date(item.date).toDateString()}</span>
                     </p>
-                    <p>Payment: {item.paymentMethod }</p>
+                    <p className="order-payment">Payment: {item.paymentMethod}</p>
                   </div>
                 </div>
               </div>
