@@ -6,6 +6,7 @@ import axios from "axios";
 export const ShopContext = createContext(null);
 
 const delivery_fee = 100;
+const promoCode = "CLICKCART1000";
 
 const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
@@ -142,6 +143,25 @@ const ShopContextProvider = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setToken, token]);
 
+  // promo code logic
+  const [isPromoApplied, setIsPromoApplied] = useState(false);
+  const [promoCodeUsed, setPromoCodeUsed] = useState("");
+  const [promoDiscountValue, setPromoDiscountValue] = useState(0);
+
+  const applyPromo = (code, value) => {
+    setIsPromoApplied(true);
+    setPromoCodeUsed(code);
+    setPromoDiscountValue(value);
+  };
+  console.log(promoCodeUsed);
+
+  const totalAmount = () => {
+    const cartTotal = getTotalCartAmount();
+    return isPromoApplied
+      ? cartTotal + delivery_fee - promoDiscountValue
+      : cartTotal + delivery_fee;
+  };
+
   const contextValue = {
     products,
     delivery_fee,
@@ -155,6 +175,12 @@ const ShopContextProvider = (props) => {
     backendURL,
     token,
     setToken,
+    promoCode,
+    applyPromo,
+    totalAmount,
+    isPromoApplied,
+    promoCodeUsed,
+    promoDiscountValue,
   };
 
   return (

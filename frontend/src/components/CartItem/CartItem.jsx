@@ -56,12 +56,11 @@ const CartItem = ({ cartData }) => {
                     alt="removeIcon"
                   />
                 </div>
-                <hr />
               </div>
+              <hr />
             </>
           );
         }
-        // console.log(fullProduct);
       })}
 
       <div className="cart-items-down">

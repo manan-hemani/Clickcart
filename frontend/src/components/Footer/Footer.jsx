@@ -2,8 +2,6 @@ import React from "react";
 import "./Footer.css";
 import { Link } from "react-router-dom";
 import footer_logo from "../Assests/logo.png";
-import instagram_icon from "../Assests/instagram.png";
-import whatsapp_icon from "../Assests/whatsapp.png";
 
 const Footer = () => {
   return (
@@ -12,38 +10,39 @@ const Footer = () => {
         <img src={footer_logo} alt="logo" height={50} />
         <p>ClickCart</p>
       </div>
-      <ul className="footer-links">
-        <li>Company</li>
-        <li>Products</li>
-        <li>Offices</li>
-        <li>
-          <Link
-            className="footer-link"
-            to="/about"
-          >
-            About
-          </Link>
-        </li>
-        <li>
-          <Link
-            className="footer-link"
-            to="/contactus"
-          >
-            Contact
-          </Link>
-        </li>
-      </ul>
-      <div className="footer-social-icons">
-        <div className="footer-icons-container">
-          <img src={instagram_icon} alt="instagram" height={40} width={40} />
+      <div className="footer-main">
+        <div className="footer-main-left">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+          nisi deleniti praesentium quo accusamus asperiores facere quam
+          incidunt eum, corrupti eveniet quas nulla libero deserunt laudantium?
+          Autem eveniet ex recusandae.
         </div>
-        <div className="footer-icons-container">
-          <img src={whatsapp_icon} alt="whatsapp" height={40} width={40} />
+
+        <div className="footer-main-right">
+          <ul className="footer-links">
+            <li>Company</li>
+            <li>Products</li>
+            <li>Offices</li>
+            <li>
+              <Link className="footer-link" to="/about">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link className="footer-link" to="/contactus">
+                Contact
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
       <div className="footer-copyright">
         <hr />
         <p>Copyright @ 2025 - All Rights Reserved</p>
+      </div>
+      <div className="footer-details">
+        <hr />
+        <p>Made with 💟 in INDIA by an INDIAN</p>
       </div>
     </div>
   );

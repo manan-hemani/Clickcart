@@ -1,17 +1,20 @@
 import React from "react";
 import "./Breadcrumbs.css";
 import arrow_icon from "../Assests/right_arrow.png";
+import { useParams } from "react-router-dom";
 
-const breadcrumbs = (props) => {
+const Breadcrumbs = (props) => {
+  const { productId } = useParams();
   const { product } = props;
+  const product_item = product.find((item) => item._id === productId);
+  console.log(product_item);
   return (
     <div className="breadcrumb">
       HOME <img src={arrow_icon} alt="arrow" /> SHOP
-      <img src={arrow_icon} alt="arrow" /> {product.category}
-      <img src={arrow_icon} alt="arrow" /> {product.name}
-      {/* <img src={arrow_icon} alt="arrow" /> */}
+      <img src={arrow_icon} alt="arrow" /> {product_item.category}
+      <img src={arrow_icon} alt="arrow" /> {product_item.name}
     </div>
   );
 };
 
-export default breadcrumbs;
+export default Breadcrumbs;

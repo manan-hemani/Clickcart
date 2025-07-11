@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { ShopContext } from "../context/ShopContext";
-import Breadcrumbs from "../components/Breadcrumbs/breadcrumbs";
+import Breadcrumbs from "../components/Breadcrumbs/Breadcrumbs";
 import ProductDisplay from "../components/ProductDisplay/ProductDisplay";
 import DescriptionBox from "../components/DescriptionBox/DescriptionBox";
 import RelatedProducts from "../components/RelatedProducts/RelatedProducts";

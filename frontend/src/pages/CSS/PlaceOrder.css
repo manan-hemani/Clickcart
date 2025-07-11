@@ -1,90 +1,129 @@
-.place-order{
-    display: flex;
-    margin: 10px;
-    padding: 10px;
-    justify-content: space-around;
-    height: 100vh;
+.place-order {
+  display: flex;
+  margin: 10px;
+  padding: 10px;
+  justify-content: space-around;
+  height: 100vh;
 }
 
-.place-order-left{
-    display: flex;
-    gap: 20px;
-    flex-direction: column;
-    width: 40%;
+.place-order-left {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  width: 40%;
 }
-.place-order-left input{
-    height: 25px;
-    font-size: 14px;
-    border: 1px solid gray;
-    border-radius: 5px;
-    padding: 7px;
-}
-
-.place-order-left-details{
-    display: flex;
-    gap: 10px;
-}
-.place-order-left-details input{
-    width: 100%;
+.place-order-left input {
+  height: 25px;
+  font-size: 14px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 7px;
 }
 
-.place-order-right-payments{
-    margin-top: 20px;
+.place-order-left-details {
+  display: flex;
+  gap: 10px;
 }
-.place-order-right-payments button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    margin-left: auto;
-    padding: 10px;
-    width: 50%;
-    font-size: 16px;
-    background: black;
-    color: white;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    cursor: pointer;
+.place-order-left-details input {
+  width: 100%;
 }
-.place-order-right-payments button:hover{
-    border: 1px solid black;
-    background: transparent;
-    color: black;
+.place-order-right {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.place-order-right-payments {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.place-order-right-payments button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-left: auto;
+  padding: 10px;
+  width: 50%;
+  font-size: 16px;
+  background: black;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.place-order-right-payments button:hover {
+  border: 1px solid black;
+  background: transparent;
+  color: black;
 }
 
-.place-order-right-payment{
-    margin-top: 5px;
-    display: flex;
-    gap: 20px;
+.place-order-right-payment {
+  margin-top: 5px;
+  display: flex;
+  gap: 20px;
 }
-.place-order-right-payment-option{
-    display: flex;
-    align-items: center;
-    border: 1px solid grey;
-    border-radius: 5px;
-    padding: 10px;
-    gap: 5px;
-    cursor: pointer;
+.place-order-right-payment-option {
+  display: flex;
+  align-items: center;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 10px;
+  gap: 5px;
+  cursor: pointer;
 }
-.place-order-right-payment-option p{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    height: 10px;
-    width: 10px;
-    border: 2px solid black;
-    border-radius: 10px;
+.place-order-right-payment-option p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height: 10px;
+  width: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
 }
 
 /* using different page */
-.place-order-right .cart-total{
-    display: grid;
-    gap: 20px;
+.place-order-right .cart-total {
+  display: grid;
+  gap: 20px;
 }
-.place-order-right .cart-items-total{
-    width: 100%;
+.place-order-right .cart-items-total {
+  width: 90%;
 }
 
 /* Responsive */
+@media (max-width: 800px) {
+  .place-order-left {
+    width: 50%;
+  }
+  .place-order-left h1 {
+    font-size: 24px;
+  }
+  .place-order {
+    gap: 10px;
+  }
+  .place-order-right-payments h2 {
+    font-size: 20px;
+  }
+  .place-order-right-payment {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .place-order {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  .place-order-left {
+    width: auto;
+  }
+  .place-order-right {
+    width: auto;
+  }
+}

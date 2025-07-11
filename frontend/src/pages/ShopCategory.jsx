@@ -32,7 +32,7 @@ const ShopCategory = ({ category, banner }) => {
       />
       <div className="shop-category-indexSort">
         <p>
-          <span>Showing {count}</span> Products
+          <span>Showing {count}</span> {category}
         </p>
         <div className="shop-category-sort">
           <select

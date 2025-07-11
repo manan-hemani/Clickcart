@@ -9,10 +9,10 @@ import  Product  from "./pages/Product.jsx";
 import  Cart from "./pages/Cart.jsx";
 import  LoginSignup  from "./pages/LoginSignup.jsx";
 import Footer from "./components/Footer/Footer.jsx";
-import mobile_banner from './components/Assests/banner.jpg'
-import tablet_banner from './components/Assests/banner.jpg'
-import laptop_banner from './components/Assests/banner.jpg'
-import audio_banner from './components/Assests/banner.jpg'
+import mobile_banner from './components/Assests/mobile_banner.jpg'
+import tablet_banner from './components/Assests/tablet_banner.png'
+import laptop_banner from './components/Assests/laptop_banner.jpg'
+import audio_banner from './components/Assests/audio_banner.jpg'
 import About from "./pages/About.jsx";
 import ContactUs from "./pages/ContactUs.jsx";
 import PlaceOrder from "./pages/PlaceOrder.jsx";

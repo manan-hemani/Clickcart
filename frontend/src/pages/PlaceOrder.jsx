@@ -2,8 +2,6 @@ import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CSS/PlaceOrder.css";
 import CartTotal from "./CartTotal";
-import stripe_icon from "../components/Assests/stripe_logo.png";
-import razorpay_icon from "../components/Assests/razorpay_logo.png";
 import { ShopContext } from "../context/ShopContext";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -20,6 +18,7 @@ const PlaceOrder = () => {
     setCartItems,
     getTotalCartAmount,
   } = useContext(ShopContext);
+
   const handlePlace = () => {
     navigate("/orders");
   };
@@ -204,7 +203,7 @@ const PlaceOrder = () => {
                 >
                   {" "}
                 </p>
-                <img src={stripe_icon} alt="stripe" />
+                <h3>Stripe</h3>
               </div>
               <div
                 onClick={() => setMethod("razorpay")}
@@ -218,7 +217,7 @@ const PlaceOrder = () => {
                     width: "10px",
                   }}
                 ></p>
-                <img src={razorpay_icon} alt="razorpay" />
+                <h3>Razorpay</h3>
               </div>
               <div
                 onClick={() => setMethod("cod")}

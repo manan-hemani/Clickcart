@@ -1,16 +1,13 @@
 .footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
   background: #f7f5f5;
   padding-top: 20px;
+  height: auto;
 }
 
 .footer-logo {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
 }
 .footer-logo p {
@@ -19,12 +16,36 @@
   font-weight: 700;
 }
 
+.footer-main{
+  display: flex;
+  justify-content:space-between;
+  gap: 50px;
+  margin: 20px 10px 10px 10px;
+  padding: 10px;
+}
+
+.footer-main-left{
+  display: flex;
+  font-size: 16px;
+  width: 30%;
+  margin-left: 30px;
+  text-align: justify;
+  justify-content: center;
+}
+.footer-main-right{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+
 .footer-links {
   display: flex;
+  flex-direction: column;
   list-style: none;
-  gap: 50px;
+  gap: 10px;
   color: black;
-  font-size: 20px;
+  font-size: 16px;
 }
 .footer-link{
   color: black;
@@ -32,20 +53,8 @@
   transition: color 0.3s ease;
 }
 .footer-link:hover {
-  color: #5e5e5e;
-}
-
-.footer-social-icons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-.footer-icons-container {
-  padding: 10px;
-  padding-bottom: 6px;
-  color: black;
-  cursor: pointer;
+  color: #484848;
+  text-decoration: underline;
 }
 
 .footer-copyright {
@@ -56,10 +65,27 @@
   width: 100%;
   margin-bottom: 30px;
   color: black;
-  font-size: 20px;
+  font-size: 16px;
 }
 .footer-copyright hr {
-  width: 80%;
+  width: 95%;
+  border: none;
+  border-radius: 10px;
+  height: 3px;
+  background: #5e5e5e;
+}
+
+.footer-details{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  color: black;
+  font-size: 16px;
+}
+.footer-details hr {
+  width: 95%;
   border: none;
   border-radius: 10px;
   height: 3px;
@@ -84,13 +110,57 @@
     font-size: 25px;
   }
   .footer-links {
-    font-size: 14px;
-    gap: 10px;
+    font-size: 16px;
+    /* gap: 10px; */
   }
-  .footer-social-icons {
-    width: 20px;
+  .footer-main{
+    gap: 30px;
+  }
+  .footer-main-left{
+    width: 40%;
+  }
+  .footer-main-right{
+    justify-content: flex-end;
+    margin-right: 30px;
   }
   .footer-copyright {
     font-size: 13px;
+  }
+  .footer-details{
+    font-size: 13px;
+  }
+}
+
+@media (max-width:500px) {
+  .footer{
+    height: auto;
+  }
+  .footer-main{
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-main-left{
+    display: block;
+    width: 90%;
+    font-size: 12px;
+    margin: 0;
+  }
+  .footer-main-right{
+    display: block;
+  }
+  .footer-links{
+    flex-direction: row;
+    padding: 0;
+    font-size: 12px;
+  }
+  .footer-copyright{
+    gap: 10px;
+    margin-bottom: 5px;
+  }
+  .footer-copyright hr{
+    height: 1px;
+  }
+  .footer-details hr{
+    height: 1px;
   }
 }

@@ -70,6 +70,9 @@
   .item{
     font-size: 12px;
   }
+  .item img{
+    height: auto;
+  }
   .item-price-new{
     font-size: 14px;
   }

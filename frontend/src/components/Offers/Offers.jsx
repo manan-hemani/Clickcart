@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import "./Offers.css";
 import offer_image from "../Assests/exclusive_image.png";
 import { toast } from "react-toastify";
+import { ShopContext } from "../../context/ShopContext";
 
 const Offers = () => {
-  const promoCode = "CLICKCART1000";
+  // const promoCode = "CLICKCART1000";
+  const { promoCode } = useContext(ShopContext);
 
   const handleClick = () => {
     if (localStorage.getItem("token")) {

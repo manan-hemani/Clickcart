@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    height: 135vh;
+    height: 70vh;
     background: #E0FFFA;
     padding-top: 10px;
 }
@@ -30,7 +30,7 @@
 
 @media (max-width:1280px) {
     .new-products{
-        height: 75vh;
+        height: auto;
     }
     .new-products h1{
         font-size: 30px;
@@ -60,9 +60,6 @@
 }
 
 @media (max-width:800px) {
-    .new-products{
-        height: auto;
-    }
     .new-products h1{
         font-size: 20px;
     }
@@ -78,9 +75,6 @@
 }
 
 @media (max-width:500px) {
-    .new-products{
-        height: auto;
-    }
     .new-products h1{
         font-size: 18px;
     }
@@ -91,7 +85,7 @@
        display: grid;
        grid-template-columns: 1fr 1fr;
        gap: 20px;
-       margin: 10px;
+       margin: 10px 10px 10px 20px ;
        padding: 5px;
     }
 }

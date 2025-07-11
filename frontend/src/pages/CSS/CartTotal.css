@@ -84,6 +84,11 @@
   color: black;
   border: 1px solid;
 }
+.cart-items-total-item span{
+  font-size: 18px;
+  font-weight: bolder;
+  height: 3px;
+}
 
 /* Responsive */
 
@@ -130,7 +135,6 @@
     grid-template-columns: 1fr 1frs;
   }
   .cart-items-total button {
-    margin-left: 0px;
     max-width: 150px;
   }
 }
