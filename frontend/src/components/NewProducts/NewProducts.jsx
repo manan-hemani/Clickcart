@@ -6,14 +6,8 @@ import Item from "../Item/Item";
 const NewProducts = ({ products }) => {
   const [new_products, setNew_products] = useState([]);
 
-  // useEffect(() => {
-  //   if (Array.isArray(products) && products.length > 0) {
-  //     const filtered = products.filter((item) => item.bestseller);
-  //     setNew_products(filtered.slice(0, 5));
-  //   }
-  // }, [products]);
   useEffect(() => {
-    setNew_products(products.slice(0, 5));
+    setNew_products(products.slice(0, 4));
   },[products]);
 
   return (

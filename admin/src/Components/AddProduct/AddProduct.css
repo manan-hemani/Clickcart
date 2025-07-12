@@ -6,7 +6,8 @@
   margin: 20px 30px;
   border-radius: 6px;
   background: white;
-  height: auto;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 .add-product-item-field {
@@ -27,6 +28,7 @@
 .add-product-item-field textarea{
   width: 100%;
   max-width: 600px;
+  height: 50px;
 }
 
 .add-product-price {
@@ -41,6 +43,7 @@
   font-size: 14px;
   border: 1px solid #c3c3c3;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .add-product-thumbnail-image {
@@ -71,6 +74,9 @@
 }
 .size-box.selected{
   background-color: white;
+}
+.laptop-size-box{
+  width: 200px;
 }
 
 .add-product-button {

@@ -50,8 +50,9 @@
     width: 100%;
     overflow-y: auto;
 }
-/* Responsive */
 
+
+/* Responsive */
 @media (max-width:800px) {
     .list-product{
         width: auto;
@@ -78,9 +79,12 @@
         padding: 10px 30px;
         margin: 20px auto;
     }
+    .list-product-format-main{
+        font-size: 14px;
+    }
     .list-product-format{
         padding: 15px 0px;
-        font-size: 14px;
+        font-size: 12px;
     }
     .list-product-icon{
         height: 50px;

@@ -25,16 +25,15 @@
   gap: 10px;
   margin-bottom: 1rem;
 }
-.product-display-image-list img{
-  height: auto;
+.product-display-image-list img {
+  height: 100px;
   width: 100px;
+  object-fit: contain;
 }
 
 .product-display-image-main {
-  width: 100%;
   height: 500px;
-  max-height: 500px;
-  max-width: 500px;
+  width: 500px;
   object-fit: contain;
   border-radius: 8px;
 }
@@ -72,6 +71,7 @@
 
 .product-display-right-description {
   font-size: 16px;
+  text-align: justify;
 }
 
 .product-display-right-prices {
@@ -118,7 +118,7 @@
 }
 
 .memory-button.selected {
-  background-color: gray; 
+  background-color: gray;
   color: white;
   border-color: #2563eb;
 }
@@ -146,7 +146,7 @@
   color: black;
 }
 
-.product-display-policy{
+.product-display-policy {
   color: gray;
   font-size: 14px;
   margin-bottom: 10px;
@@ -176,7 +176,7 @@
     height: 120px;
   }
   .product-display-image-main {
-    width: auto;
+    width: 400px;
     height: 510px;
   }
   .product-display-right {
@@ -228,14 +228,15 @@
   .product-display-left {
     gap: 5px;
   }
-  .product-display-image-list{
+  .product-display-image-list {
     height: auto;
   }
   .product-display-image-main {
-    height: 350px;
+    width: 350px;
+    height: 500px;
   }
-  .product-display-right{
-    margin-left:20px ;
+  .product-display-right {
+    margin-left: 20px;
   }
   .product-display-right h1 {
     font-size: 18px;
@@ -280,7 +281,7 @@
     gap: 10px;
   }
   .product-display-image-main {
-    height: 270px;
+    height: 400px;
     width: 200px;
   }
   .product-display-right {
@@ -289,13 +290,13 @@
     width: 50%;
   }
   .product-display-right h1 {
-    font-size: 14px;
+    font-size: 24px;
   }
   .product-display-right-star img {
     width: 13px;
   }
   .product-display-right-description {
-    font-size: 10px;
+    font-size: 14px;
   }
   .product-display-right-select h1 {
     margin-top: 10px;
@@ -330,7 +331,7 @@
     margin: 10px 0px;
     font-size: 15px;
   }
-  .product-display-addtocart{
+  .product-display-addtocart {
     width: 150px;
     font-size: 14px;
   }
@@ -340,9 +341,8 @@
   .product-display {
     flex-direction: column;
   }
-  
   .product-display-image-list img {
-    height: auto;
+    height: 100px;
   }
   .product-display-image-main {
     height: 330px;
@@ -354,7 +354,7 @@
   .product-display-right h1 {
     margin-top: 15px;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 600;
   }
   .product-display-right-star {
     width: 15px;

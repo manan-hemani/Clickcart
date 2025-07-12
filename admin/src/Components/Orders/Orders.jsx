@@ -63,7 +63,7 @@ const Orders = ({ token }) => {
         {orders.map((order, index) => (
           <div key={index} className="orders-format">
             <div className="orders-format-image">
-              <img src={parcel_icon} alt="parcels" width={100} height={100}/>
+              <img className="orders-parcel-image"src={parcel_icon} alt="parcels"  />
               <div className="orders-format-details">
                 <h3>Order Details</h3>
                 {order.items.map((item, index) => {
@@ -113,24 +113,26 @@ const Orders = ({ token }) => {
               <p>Payment : {order.payment ? "Done" : "Pending"}</p>
               <p>Date : {new Date(order.date).toLocaleDateString()}</p>
             </div>
-            <div className="orders-total-payment">
-              <h3>Total Payment</h3>
-              <div>
-                <p>Rs. {order.amount}.00</p>
+            <div className="orders-payment-status">
+              <div className="orders-total-payment">
+                <h3>Total Payment</h3>
+                <div>
+                  <p>Rs. {order.amount}.00</p>
+                </div>
               </div>
-            </div>
-            <div className="orders-status">
-              <h3>Order Status</h3>
-              <select
-                onChange={(event) => statusHandler(event, order._id)}
-                value={order.status}
-              >
-                <option value="Order Placed">Order Placed</option>
-                <option value="Packing">Packing</option>
-                <option value="Shipped">Shipped</option>
-                <option value="Out for Delivery">Out for Delivery</option>
-                <option value="Delivered">Delivered</option>
-              </select>
+              <div className="orders-status">
+                <h3>Order Status</h3>
+                <select
+                  onChange={(event) => statusHandler(event, order._id)}
+                  value={order.status}
+                >
+                  <option value="Order Placed">Order Placed</option>
+                  <option value="Packing">Packing</option>
+                  <option value="Shipped">Shipped</option>
+                  <option value="Out for Delivery">Out for Delivery</option>
+                  <option value="Delivered">Delivered</option>
+                </select>
+              </div>
             </div>
           </div>
         ))}

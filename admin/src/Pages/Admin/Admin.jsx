@@ -5,7 +5,6 @@ import { Routes, Route } from "react-router-dom";
 import AddProduct from "../../Components/AddProduct/AddProduct";
 import ListProduct from "../../Components/ListProduct/ListProduct";
 import Orders from "../../Components/Orders/Orders";
-import Login from "../../Components/Login/Login";
 
 const admin = ({ token }) => {
   return (

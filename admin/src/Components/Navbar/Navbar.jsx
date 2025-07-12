@@ -1,14 +1,20 @@
-import React from 'react'
-import './Navbar.css';
-import navLogo from "../../Assets/nav-logo.svg";
+import React from "react";
+import "./Navbar.css";
+import navLogo from "../../Assets/admin_logo.png";
 
-const navbar = ({setToken}) => {
+const navbar = ({ setToken }) => {
   return (
-    <div className='navbar'>
+    <div className="navbar">
       <img src={navLogo} alt="logo" className="navbar-logo" />
-      <button onClick={()=>{setToken("")}}>Logout</button>
+      <button
+        onClick={() => {
+          setToken("");
+        }}
+      >
+        Logout
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default navbar
+export default navbar;

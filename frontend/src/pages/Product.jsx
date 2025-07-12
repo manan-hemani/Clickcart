@@ -13,7 +13,7 @@ const Product = () => {
       <Breadcrumbs product={products} />
       <ProductDisplay product={products} />
       <DescriptionBox />
-      <RelatedProducts category={ products} />
+      <RelatedProducts product={ products} />
     </div>
   );
 };

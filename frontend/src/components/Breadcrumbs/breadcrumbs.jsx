@@ -7,7 +7,6 @@ const Breadcrumbs = (props) => {
   const { productId } = useParams();
   const { product } = props;
   const product_item = product.find((item) => item._id === productId);
-  console.log(product_item);
   return (
     <div className="breadcrumb">
       HOME <img src={arrow_icon} alt="arrow" /> SHOP

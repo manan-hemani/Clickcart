@@ -17,7 +17,29 @@ const AddProduct = ({ token }) => {
   const [category, setCategory] = useState("mobiles");
   const [bestseller, setBestseller] = useState(false);
   const [sizes, setSizes] = useState([]);
-  const allSizes = ["128GB", "256GB", "512GB", "1TB"];
+  const mobile_sizes = ["128GB", "256GB", "512GB", "1TB"];
+  const tablet_sizes = ["64GB", "128GB", "256GB", "512GB"];
+  const laptop_sizes = [
+    "8GB + 512GB SSD",
+    "8GB + 512GB HDD",
+    "4GB + 512GB HDD",
+    "12GB + 1TB SSD",
+  ];
+  // const audio_sizes = [];
+
+  const getSizesForCategory = (cat) => {
+    switch (cat) {
+      case "laptops":
+        return laptop_sizes;
+      case "mobiles":
+        return mobile_sizes;
+      case "tablets":
+        return tablet_sizes;
+      default:
+        return [];
+    }
+  };
+
   const toggleSize = (size) => {
     setSizes((prev) =>
       prev.includes(size)
@@ -50,7 +72,7 @@ const AddProduct = ({ token }) => {
       );
       console.log(token);
       if (response.data.success) {
-        toast.success(response.data.success);
+        toast.success("Product Added");
         setName("");
         setDescription("");
         setImage1(false);
@@ -126,20 +148,24 @@ const AddProduct = ({ token }) => {
             <option value="audio">Audio Device</option>
           </select>
         </div>
-        <div className="add-product-item-field">
-          <p>Product Memory</p>
-          <div className="add-product-sizes-option">
-            {allSizes.map((size) => (
-              <div
-                key={size}
-                className={`size-box ${sizes.includes(size) ? "selected" : ""}`}
-                onClick={() => toggleSize(size)}
-              >
-                {size}
-              </div>
-            ))}
+        {category !== "audio" && (
+          <div className="add-product-item-field">
+            <p>Product Memory</p>
+            <div className="add-product-sizes-option">
+              {getSizesForCategory(category).map((size) => (
+                <div
+                  key={size}
+                  className={`size-box ${
+                    sizes.includes(size) ? "selected" : ""
+                  } ${category === "laptops" ? "laptop-size-box" : ""}`}
+                  onClick={() => toggleSize(size)}
+                >
+                  {size}
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
         <div className="add-product-item-field">
           <p>Upload Images</p>
           <label htmlFor="image1">

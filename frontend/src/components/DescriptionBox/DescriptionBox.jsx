@@ -9,8 +9,14 @@ const DescriptionBox = () => {
         <div className="description-box-navbox fade">Reviews (122)</div>
       </div>
       <div className="description-box-description">
-              <p>find online para related to ecommerce selling online electronics</p>
-              <p>some more para.. related to products</p>
+        <p>
+          An online electronics e-commerce website offers a seamless shopping
+          experience for gadgets like smartphones, laptops, tablets, and audio
+          devices. Customers can explore detailed specs, compare products, and
+          enjoy secure payments with fast delivery. It’s a one-stop destination
+          for tech enthusiasts seeking convenience, variety, and trusted
+          brands—all from home.
+        </p>
       </div>
     </div>
   );
