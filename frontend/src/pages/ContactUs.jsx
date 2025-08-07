@@ -8,13 +8,13 @@ const ContactUs = () => {
       <h1>Contact Us</h1>
       <div className="contact">
         <div className="contact-left">
-          <img src={contact_img} alt="contactUs" width={500} />
+          <img src={contact_img} alt="contactUs" />
         </div>
         <div className="contact-right">
           <div className="contact-details">
             <h3>Our Store</h3>
             <p>
-              Balaji Ward, Jagdalpur <br />
+              Unknown, Jagdalpur <br />
               Chhattisgarh, India <br />
               494001
             </p>
