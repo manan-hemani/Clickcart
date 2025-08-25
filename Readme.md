@@ -1,6 +1,6 @@
 # 🛒 ClickCart – Electronics E-commerce Website
 
-ClickCart is a full-stack e-commerce web application focused on selling electronics such as mobiles, tablets, laptops, and audio products. It features a user-friendly shopping experience, admin product management, secure authentication, and cloud-based image storage.
+ClickCart is a full-stack e-commerce website focused on selling electronics such as mobiles, tablets, laptops, and audio products. It features a user-friendly shopping experience, admin product management, secure authentication, and cloud-based image storage.
 
 ---
 
